@@ -1,0 +1,32 @@
+ body, html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            height: 100%;
+            background: #000;
+        }
+
+        /* Canvas styling to make it fill the screen */
+        canvas {
+            display: block;
+            background: #0a0a1a; /* Dark blue-black for a night sky feel */
+        }
+        
+        /* Styling for the instruction text */
+        #instructions {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(255, 255, 255, 0.6);
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            text-align: center;
+            pointer-events: none; /* Allows clicks to go through the text */
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 0.6; }
+        }
