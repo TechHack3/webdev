@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Image Slider / Carousel</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="wrap">
+    <h1 class="title">Image Slider / Carousel</h1>
+
+    <div class="carousel" id="carousel" aria-roledescription="carousel">
+      <div class="slides" id="slides">
+        <!-- Slide items: change image src to your images -->
+        <div class="slide" data-index="0" aria-hidden="false">
+          <img src="https://picsum.photos/id/1018/1200/600" alt="Scenic view 1">
+          <div class="caption">Beautiful mountains</div>
+        </div>
+        <div class="slide" data-index="1" aria-hidden="true">
+          <img src="https://picsum.photos/id/1015/1200/600" alt="Scenic view 2">
+          <div class="caption">Calm lake</div>
+        </div>
+        <div class="slide" data-index="2" aria-hidden="true">
+          <img src="https://picsum.photos/id/1016/1200/600" alt="Scenic view 3">
+          <div class="caption">Sunset beach</div>
+        </div>
+        <div class="slide" data-index="3" aria-hidden="true">
+          <img src="https://picsum.photos/id/1020/1200/600" alt="Scenic view 4">
+          <div class="caption">Forest path</div>
+        </div>
+      </div>
+
+      <!-- controls -->
+      <button class="control prev" id="prevBtn" aria-label="Previous slide">‹</button>
+      <button class="control next" id="nextBtn" aria-label="Next slide">›</button>
+
+      <!-- pagination dots -->
+      <div class="dots" id="dots" role="tablist" aria-label="Slide dots"></div>
+
+      <!-- progress bar / timer -->
+      <div class="progress" id="progress"><span></span></div>
+    </div>
+
+    <div class="settings">
+      <label>
+        Auto-play
+        <input type="checkbox" id="autoplayToggle" checked>
+      </label>
+      <label>
+        Interval (ms)
+        <input id="intervalInput" type="number" min="1000" step="500" value="3500">
+      </label>
+      <button id="goToFirst">Go to first</button>
+    </div>
+
+    <footer class="credits">Built with HTML, CSS & JavaScript — responsive + touch swipe + keyboard support</footer>
+  </main>
+
+  <script src="slider.js"></script>
+</body>
+</html>
