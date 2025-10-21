@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Expense Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <main class="container">
+    <h1>Expense Tracker</h1>
+    <div class="balance-card">
+      <h2>Your Balance</h2>
+      <p id="balance">₹0.00</p>
+    </div>
+
+    <div class="income-expense">
+      <div class="income">
+        <h3>Income</h3>
+        <p id="income">₹0.00</p>
+      </div>
+      <div class="expense">
+        <h3>Expense</h3>
+        <p id="expense">₹0.00</p>
+      </div>
+    </div>
+
+    <form id="transactionForm" class="form">
+      <input type="text" id="text" placeholder="Enter title (e.g. Rent, Salary)" required />
+      <input type="number" id="amount" placeholder="Enter amount (+income, -expense)" required />
+      <button type="submit" class="btn">Add Transaction</button>
+    </form>
+
+    <h3>History</h3>
+    <ul id="list" class="list"></ul>
+
+    <section class="chart-section">
+      <h3>Expense Breakdown</h3>
+      <canvas id="expenseChart" width="300" height="300"></canvas>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>Built with HTML, CSS, JS & Chart.js • Example Project</small>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+:root {
+  --bg: #f9fafb;
+  --card: #ffffff;
+  --text: #0f172a;
+  --accent: #2563eb;
+  --positive: #22c55e;
+  --negative: #ef4444;
+  --muted: #64748b;
+  --shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  --radius: 10px;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  font-family: "Poppins", sans-serif;
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  background: var(--card);
+  width: 90%;
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 24px 30px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+h1 {
+  text-align: center;
+  color: var(--accent);
+  margin-bottom: 20px;
+}
+
+.balance-card {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+#balance {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.income-expense {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  background: #f1f5f9;
+  border-radius: var(--radius);
+  padding: 12px 16px;
+}
+
+.income, .expense {
+  flex: 1;
+  text-align: center;
+}
+
+.income h3, .expense h3 {
+  margin: 0;
+  font-size: 16px;
+  color: var(--muted);
+}
+
+.income p {
+  color: var(--positive);
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.expense p {
+  color: var(--negative);
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+input {
+  padding: 10px 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: var(--radius);
+  font-size: 15px;
+}
+
+.btn {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  padding: 12px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn:hover {
+  background: #1d4ed8;
+}
+
+.list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 0 24px;
+}
+
+.list li {
+  background: #f8fafc;
+  color: var(--text);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  border-left: 5px solid var(--positive);
+  margin-bottom: 10px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.list li.expense {
+  border-left-color: var(--negative);
+}
+
+.list button {
+  background: transparent;
+  border: none;
+  color: var(--negative);
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.chart-section {
+  text-align: center;
+}
+
+.footer {
+  margin-bottom: 20px;
+  font-size: 13px;
+  color: var(--muted);
+}
