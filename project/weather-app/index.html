@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Weather App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <header class="header">
+      <h1>Weather App</h1>
+      <p class="subtitle">Search any city to get current weather</p>
+    </header>
+
+    <section class="search-area">
+      <input id="cityInput" type="text" placeholder="Enter city name (e.g., London)" />
+      <button id="searchBtn">Search</button>
+      <button id="locationBtn" title="Use current location">📍</button>
+    </section>
+
+    <section id="weatherCard" class="card hidden">
+      <div class="card-top">
+        <div class="city-info">
+          <h2 id="cityName">City, Country</h2>
+          <p id="localTime" class="muted">Time</p>
+        </div>
+        <div class="conditions">
+          <img id="weatherIcon" src="" alt="icon" />
+          <div class="temp">
+            <span id="tempValue">--</span>
+            <small>°C</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-body">
+        <p id="description" class="muted">Weather description</p>
+
+        <div class="details">
+          <div class="detail">
+            <strong id="feelsLike">--</strong>
+            <span>Feels like</span>
+          </div>
+          <div class="detail">
+            <strong id="humidity">--</strong>
+            <span>Humidity</span>
+          </div>
+          <div class="detail">
+            <strong id="wind">--</strong>
+            <span>Wind</span>
+          </div>
+          <div class="detail">
+            <strong id="pressure">--</strong>
+            <span>Pressure</span>
+          </div>
+        </div>
+      </div>
+
+      <footer class="card-footer">
+        <small class="muted">Data from OpenWeatherMap • Updated: <span id="updatedAt">--</span></small>
+      </footer>
+    </section>
+
+    <section id="error" class="error hidden"></section>
+
+    <footer class="credits">
+      <small>Built with HTML, CSS & JavaScript</small>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
