@@ -1,0 +1,154 @@
+html{
+    scroll-behavior: smooth;
+
+}
+body{
+    margin: 0;
+    background-color: #e21818;
+}
+section{
+    height: 100vh;
+}
+#nav-bar{
+    background-color: #ff1c1c;
+    height: 130px;
+    width: 100%;
+    box-shadow:  5px 5px 10px #a60101bb,
+             -5px -5px 5px #ffffff;
+    position: fixed;
+    z-index: 100;
+}
+.thebatmanlogo img{
+    height: 282px;
+    width: 365px;
+    overflow-y:hidden ;
+    
+}
+.thebatmanlogo{
+    display: inline-block;
+}
+#nav-bar nav{
+    display: inline-block;
+    position: absolute;
+    top: 60px;
+    right: 5%
+}
+
+#nav-bar nav ul{
+  list-style: none;
+   display: flex;
+  gap: 40px;}
+#nav-bar nav li{
+    display: inline;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 28px;
+}
+#nav-bar nav a {
+    text-decoration: none;
+    color: black;
+}
+.bat-car{
+position: absolute;
+width: 1330px;
+/* height: 607px; */
+left: 0px;
+top: 396px;
+mix-blend-mode: darken;
+
+}
+#him{
+
+position: absolute;
+width: 155px;
+height: 29px;
+left: 47%;
+top: 250px;
+
+font-family: 'Inter';
+font-style: italic;
+font-weight: 700;
+font-size: 30px;
+line-height: 30px;
+text-align: center;
+letter-spacing: 0.08em;
+
+color: #000000;
+}
+#name {
+    font-family: sans-serif;
+    font-style: italic;
+    font-weight:900;
+    font-size: 80px;
+    /* line-height: 2; */
+    letter-spacing: 0.08em;
+  text-decoration-line: underline;     
+  text-decoration-color: rgba(132, 1, 1, 0.458);          
+  text-decoration-thickness: 3px;      
+
+
+    position: absolute;
+    /* width: 502px; */
+    height: 141px;
+    left: 55%;
+    top: 279px;
+
+}
+#class_description{
+    text-decoration: none;
+    font-size: 25px;
+   
+}
+.skillset img{
+    height: 192px;
+    width: 192px;
+    object-fit: contain;
+    flex: 0 0 calc(33.33% - 30px);
+}
+.skillset{
+    
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0px 483px;
+}
+.projects{
+    height: 52vh;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 48px;
+    position: relative;
+    top: 314px;
+    left: 171px;
+    
+}
+.name-project{
+    height: 110px;
+    width: 472px;
+    background-color: #000000;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+.name-project a {
+    color: red;
+    text-decoration: none;
+    font-size: 40px;
+
+}
+.name-project a:hover{
+    color: white;
+}
+.video{
+    position: relative;
+    bottom: 454px;
+    right: -600px;
+}
