@@ -1,0 +1,128 @@
+:root{
+  --bg: #f4f7fb;
+  --card: #ffffff;
+  --accent: #3b82f6;
+  --text: #0f172a;
+  --muted: #64748b;
+  --shadow: 0 8px 24px rgba(14, 30, 37, 0.08);
+  --radius: 12px;
+  --gap: 16px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg, #eef2ff 0%, var(--bg) 100%);
+  color:var(--text);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:32px;
+}
+
+.container{
+  width:100%;
+  max-width:720px;
+  margin:auto;
+}
+
+.header{
+  text-align:center;
+  margin-bottom:18px;
+}
+.header h1{margin:0;font-size:28px}
+.subtitle{margin:4px 0 0;color:var(--muted)}
+
+.search-area{
+  display:flex;
+  gap:8px;
+  align-items:center;
+  margin-bottom:18px;
+}
+.search-area input{
+  flex:1;
+  padding:12px 14px;
+  border-radius:10px;
+  border:1px solid #e6eef8;
+  background:transparent;
+  font-size:15px;
+  outline:none;
+  box-shadow:var(--shadow);
+}
+.search-area button{
+  padding:10px 14px;
+  border-radius:10px;
+  border:0;
+  cursor:pointer;
+  background:var(--accent);
+  color:#fff;
+  font-weight:600;
+  box-shadow:var(--shadow);
+}
+.search-area button[title]{
+  background:transparent;
+  color:var(--text);
+  border:1px solid #e6eef8;
+  padding:10px;
+  font-size:16px;
+}
+
+.card{
+  background:var(--card);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:18px;
+  margin-bottom:16px;
+}
+
+.hidden{display:none}
+
+.card-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+}
+.city-info h2{margin:0;font-size:20px}
+.muted{color:var(--muted)}
+.conditions{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.conditions img{width:72px;height:72px}
+.temp{font-size:28px;font-weight:700;display:flex;align-items:baseline;gap:6px}
+
+.card-body{
+  margin-top:14px;
+}
+.details{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+  margin-top:12px;
+}
+.detail{background:#f8fafc;padding:10px;border-radius:8px;text-align:center}
+.detail strong{display:block;font-size:16px}
+
+.card-footer{margin-top:12px;text-align:right;color:var(--muted);font-size:13px}
+
+.error{
+  background:#ffe6e6;
+  color:#7b1212;
+  border:1px solid #f5c2c2;
+  padding:12px;
+  border-radius:8px;
+  margin-bottom:12px;
+}
+
+.credits{text-align:center;color:var(--muted);margin-top:8px;font-size:13px}
+
+/* responsive */
+@media (max-width:560px){
+  .details{grid-template-columns:repeat(2,1fr)}
+  .conditions img{width:56px;height:56px}
+  .temp{font-size:22px}
+}

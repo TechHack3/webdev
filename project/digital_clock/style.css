@@ -1,0 +1,97 @@
+:root {
+  --bg-color: #f8fafc;
+  --text-color: #0f172a;
+  --accent-color: #2563eb;
+  --shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  --card-bg: #ffffff;
+}
+
+body.dark {
+  --bg-color: #0f172a;
+  --text-color: #f8fafc;
+  --accent-color: #60a5fa;
+  --card-bg: #1e293b;
+  --shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-color);
+  color: var(--text-color);
+  font-family: "Poppins", sans-serif;
+  transition: background 0.3s, color 0.3s;
+}
+
+.clock-container {
+  text-align: center;
+  background: var(--card-bg);
+  padding: 30px 40px;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  transition: background 0.3s;
+}
+
+.title {
+  margin-top: 0;
+  font-size: 26px;
+  margin-bottom: 20px;
+}
+
+.clock {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 6px;
+  font-size: 64px;
+  font-weight: 700;
+  color: var(--accent-color);
+}
+
+.time {
+  min-width: 70px;
+  text-align: center;
+}
+
+#ampm {
+  font-size: 22px;
+  margin-left: 8px;
+  color: var(--text-color);
+}
+
+.date {
+  margin-top: 14px;
+  font-size: 18px;
+  color: var(--text-color);
+}
+
+.theme-toggle {
+  margin-top: 24px;
+  background: var(--accent-color);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+.theme-toggle:hover {
+  background: #1d4ed8;
+}
+
+/* responsive */
+@media (max-width: 480px) {
+  .clock {
+    font-size: 42px;
+  }
+  .title {
+    font-size: 22px;
+  }
+}
