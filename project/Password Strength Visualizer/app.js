@@ -8,6 +8,7 @@ const strengthTips = document.getElementById('strengthTips');
 
 function calculateStrength(password) {
     let score = 0;
+    console.log(password);
     let tips = [];
     if (password.length >= 6) score++; else tips.push('Use at least 6 characters');
     if (password.length >= 10) score++; else tips.push('Use 10+ characters for strong password');
