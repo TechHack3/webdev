@@ -3,7 +3,7 @@ body { font-family: Arial, sans-serif; background:#1a1a1a; color:#f1f1f1; displa
 h1 { text-align:center; margin-bottom: 20px; }
 input[type=password] { width:100%; padding:12px; border-radius:8px; border:none; margin-bottom:15px; font-size:16px; }
 .strength-bar { height:12px; border-radius:6px; background:#555; margin-bottom:10px; overflow:hidden; position:relative; }
-.strength-fill { height:100%; width:0%; transition: width 0.5s, background 0.5s; }
+.strength-fill { height:100%; width:0%; transition: width 0.5s, background 0.6s; }
 .strength-text { text-align:right; font-size:16px; margin-bottom:5px; }
 .emoji { font-size:28px; text-align:center; margin-bottom:8px; transition: transform 0.3s; }
 .tips { font-size:14px; color:#ccc; margin-top:10px; min-height:20px; }
