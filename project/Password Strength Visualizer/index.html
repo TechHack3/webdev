@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Strength Visualizer Pro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <canvas id="particles"></canvas>
+    <div class="container">
+        <h1>Password Strength</h1>
+        <input type="password" id="password" placeholder="Enter password..." />
+        <div class="emoji" id="strengthEmoji">😐</div>
+        <div class="strength-bar">
+            <div class="strength-fill" id="strengthFill"></div>
+        </div>
+        <div class="strength-text" id="strengthText">Strength: </div>
+        <div class="tips" id="strengthTips"></div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Typing Speed Race</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="wrap">
+        <header>
+            <h1>Typing Speed Race</h1>
+            <div class="controls">
+                <select id="difficulty" title="Opponent speed">
+                    <option value="30">Slow Opponent (30 WPM)</option>
+                    <option value="45" selected>Average Opponent (45 WPM)</option>
+                    <option value="65">Fast Opponent (65 WPM)</option>
+                </select>
+                <button id="newText">New Text</button>
+                <button id="reset">Reset</button>
+                <button id="start" class="primary">Start</button>
+            </div>
+        </header>
+
+        <div class="main">
+            <div>
+                <div class="card">
+                    <div id="text" class="textArea" aria-live="polite"></div>
+                    <input id="input" type="text" placeholder="Type here..." autocomplete="off" autocapitalize="off"
+                        autocorrect="off" spellcheck="false" />
+                    <div class="stats">
+                        <div class="stat">
+                            <div class="small">WPM</div>
+                            <div id="wpm" class="num">0</div>
+                        </div>
+                        <div class="stat">
+                            <div class="small">Accuracy</div>
+                            <div id="acc" class="num">100%</div>
+                        </div>
+                        <div class="stat">
+                            <div class="small">Time</div>
+                            <div id="time" class="num">0.0s</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="raceTrack">
+                <div class="lane player">
+                    <div class="car">🚗</div>
+                    <div class="progress">
+                        <div class="pos"></div>
+                    </div>
+                </div>
+                <div class="lane opponent">
+                    <div class="car">🏎️</div>
+                    <div class="progress">
+                        <div class="pos"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="small">Opponent WPM: <span class="oppW">45</span></div>
+            <div class="small">Player vs Opponent</div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

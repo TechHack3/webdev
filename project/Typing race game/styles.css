@@ -1,0 +1,46 @@
+:root{
+--bg:#0f1724; --card:#0b1220; --accent:#7c3aed; --accent-2:#06b6d4; --muted:#9ca3af; --success:#10b981; --danger:#ef4444;
+--glass: rgba(255,255,255,0.03);
+--radius:14px; font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+*{box-sizing:border-box}
+body{margin:0; min-height:100vh; background:linear-gradient(180deg,#071029 0%, #07132a 60%); color:#e6eef8; display:flex; align-items:center; justify-content:center; padding:28px}
+.wrap{width:100%; max-width:980px; background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border-radius:18px; padding:22px; box-shadow: 0 8px 30px rgba(2,6,23,0.6)}
+
+
+header{display:flex; gap:12px; align-items:center; margin-bottom:18px}
+header h1{font-size:20px; margin:0}
+.controls{display:flex; gap:10px; margin-left:auto}
+button{background:var(--glass); border:1px solid rgba(255,255,255,0.04); color:inherit; padding:10px 12px; border-radius:10px; cursor:pointer}
+button.primary{background:linear-gradient(90deg,var(--accent),var(--accent-2)); color:#021123; font-weight:700}
+
+
+.main{display:grid; grid-template-columns:1fr 320px; gap:18px}
+
+
+.card{background:rgba(255,255,255,0.02); padding:16px; border-radius:12px}
+.textArea{min-height:140px; padding:14px; font-size:18px; line-height:1.5; border-radius:10px; background:rgba(0,0,0,0.12); overflow:auto}
+.char{padding:2px}
+.char.correct{color:var(--success)}
+.char.incorrect{color:var(--danger); background:rgba(239,68,68,0.06); border-radius:4px}
+.char.current{text-decoration:underline; text-decoration-thickness:2px}
+
+
+input[type=text]{width:100%; padding:12px; margin-top:12px; border-radius:10px; border:1px solid rgba(255,255,255,0.04); background:transparent; color:inherit}
+
+
+.stats{display:flex; gap:12px; margin-top:12px; flex-wrap:wrap}
+.stat{flex:1 1 100px; background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02)); padding:10px; border-radius:10px; text-align:center}
+.stat .num{font-size:20px; font-weight:700}
+.raceTrack{height:120px; position:relative; background:linear-gradient(90deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02)); border-radius:12px; padding:12px; overflow:hidden}
+.lane{height:40px; background:rgba(255,255,255,0.02); border-radius:8px; margin-bottom:10px; display:flex; align-items:center}
+.car{width:64px; height:36px; display:flex; align-items:center; justify-content:center; font-size:22px; border-radius:8px; background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01)); box-shadow:0 6px 18px rgba(2,6,23,0.5)}
+.progress{height:100%; width:100%; position:relative}
+.pos{position:absolute; top:2px; left:0; transform:translateX(0%); transition: transform 0.1s linear}
+
+
+.footer{margin-top:12px; display:flex; gap:8px; align-items:center; justify-content:space-between}
+.small{color:var(--muted); font-size:13px}
+
+
+@media(max-width:840px){.main{grid-template-columns:1fr;}.raceTrack{order:2}}
