@@ -1,0 +1,107 @@
+/* 🎨 General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #fff;
+}
+
+.container {
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+}
+
+/* 🧩 Header */
+h1 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+
+/* ⚙️ Symbol Selection */
+.symbol-selection p {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.symbol-selection .buttons button {
+  background: #fff;
+  color: #333;
+  border: none;
+  padding: 10px 25px;
+  margin: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: 0.3s ease;
+}
+
+.symbol-selection .buttons button:hover {
+  background: #764ba2;
+  color: #fff;
+}
+
+/* 🎯 Game Board */
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  gap: 10px;
+  justify-content: center;
+  margin: 20px auto;
+}
+
+.cell {
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px solid #fff;
+  border-radius: 10px;
+  font-size: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.cell:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* 🧠 Game Info */
+#turn-info,
+#game-result {
+  font-size: 1.3rem;
+  margin-top: 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+/* 🔁 Restart Button */
+#restart-btn {
+  background: #fff;
+  color: #333;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: 0.3s ease;
+}
+
+#restart-btn:hover {
+  background: #764ba2;
+  color: #fff;
+}
+
