@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tic Tac Toe</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Tic-Tac-Toe 🎮</h1>
+
+    <!-- Choose X or O -->
+    <div id="symbol-selection" class="symbol-selection">
+      <p>Player 1, choose your symbol:</p>
+      <div class="buttons">
+        <button id="chooseX">X</button>
+        <button id="chooseO">O</button>
+      </div>
+    </div>
+
+    <!-- Game board -->
+    <div id="game-board" class="game-board hidden">
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+    </div>
+
+    <h2 id="turn-info" class="hidden"></h2>
+    <h2 id="game-result" class="hidden"></h2>
+    <button id="restart-btn" class="hidden">Restart Game</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
