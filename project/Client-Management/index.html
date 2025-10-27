@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Client Management System (Frontend)</title>
+
+  <!-- Bootstrap CSS (CDN) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid px-4">
+      <a class="navbar-brand fw-bold" href="#">ClientManager</a>
+      <div class="d-flex gap-2">
+        <button id="btnShowClients" class="btn btn-light btn-sm">Clients</button>
+        <button id="btnShowProjects" class="btn btn-light btn-sm">Projects</button>
+        <button id="btnShowMeetings" class="btn btn-light btn-sm">Meetings</button>
+        <button id="btnShowPortfolio" class="btn btn-light btn-sm">Portfolio</button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container mt-4">
+    <!-- Pages -->
+    <section id="page-clients" class="page">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h3>Clients</h3>
+        <div>
+          <input id="clientSearch" class="form-control form-control-sm d-inline-block me-2" style="width:200px" placeholder="Search name/company">
+          <button class="btn btn-success btn-sm" id="btnAddClient">+ Add Client</button>
+        </div>
+      </div>
+
+      <div class="table-responsive">
+        <table class="table table-hover align-middle" id="clientsTable">
+          <thead class="table-light">
+            <tr><th>#</th><th>Name</th><th>Email</th><th>Phone</th><th>Company</th><th>Actions</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="page-projects" class="page d-none">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h3>Projects</h3>
+        <div>
+          <button class="btn btn-success btn-sm" id="btnAddProject">+ Add Project</button>
+        </div>
+      </div>
+
+      <div class="table-responsive">
+        <table class="table table-striped" id="projectsTable">
+          <thead class="table-light">
+            <tr><th>#</th><th>Project</th><th>Client</th><th>Status</th><th>Start</th><th>End</th><th>Actions</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="page-meetings" class="page d-none">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h3>Meetings</h3>
+        <div>
+          <button class="btn btn-success btn-sm" id="btnAddMeeting">+ Schedule</button>
+        </div>
+      </div>
+
+      <div class="table-responsive">
+        <table class="table table-bordered" id="meetingsTable">
+          <thead class="table-light">
+            <tr><th>#</th><th>Client</th><th>Project</th><th>Date</th><th>Time</th><th>Agenda</th><th>Actions</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="page-portfolio" class="page d-none">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h3>Portfolio</h3>
+        <div>
+          <button class="btn btn-success btn-sm" id="btnAddPortfolio">+ Add Portfolio</button>
+        </div>
+      </div>
+
+      <div class="row" id="portfolioGrid"></div>
+    </section>
+  </main>
+
+  <!-- Modals -->
+  <!-- Client Modal -->
+  <div class="modal fade" id="modalClient" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <form id="formClient" class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Add Client</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <input type="hidden" id="clientId">
+          <div class="mb-3"><label class="form-label">Name</label><input id="clientName" required class="form-control"></div>
+          <div class="mb-3"><label class="form-label">Email</label><input id="clientEmail" type="email" class="form-control"></div>
+          <div class="mb-3"><label class="form-label">Phone</label><input id="clientPhone" class="form-control"></div>
+          <div class="mb-3"><label class="form-label">Company</label><input id="clientCompany" class="form-control"></div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">Save</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Project Modal -->
+  <div class="modal fade" id="modalProject" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <form id="formProject" class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Add Project</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <input type="hidden" id="projectId">
+          <div class="mb-3"><label class="form-label">Project Name</label><input id="projectName" required class="form-control"></div>
+          <div class="mb-3"><label class="form-label">Client</label><select id="projectClient" class="form-select"></select></div>
+          <div class="mb-3"><label class="form-label">Status</label>
+            <select id="projectStatus" class="form-select">
+              <option>Ongoing</option><option>Completed</option><option>Planned</option>
+            </select>
+          </div>
+          <div class="mb-3 d-flex gap-2">
+            <div><label class="form-label">Start</label><input id="projectStart" type="date" class="form-control"></div>
+            <div><label class="form-label">End</label><input id="projectEnd" type="date" class="form-control"></div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-primary">Save</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Meeting Modal -->
+  <div class="modal fade" id="modalMeeting" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <form id="formMeeting" class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Schedule Meeting</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <input type="hidden" id="meetingId">
+          <div class="mb-3"><label class="form-label">Client</label><select id="meetingClient" class="form-select"></select></div>
+          <div class="mb-3"><label class="form-label">Project</label><select id="meetingProject" class="form-select"></select></div>
+          <div class="mb-3 d-flex gap-2">
+            <div><label class="form-label">Date</label><input id="meetingDate" type="date" class="form-control"></div>
+            <div><label class="form-label">Time</label><input id="meetingTime" type="time" class="form-control"></div>
+          </div>
+          <div class="mb-3"><label class="form-label">Agenda</label><input id="meetingAgenda" class="form-control"></div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-primary">Save</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Portfolio Modal -->
+  <div class="modal fade" id="modalPortfolio" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <form id="formPortfolio" class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Add Portfolio</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <input type="hidden" id="portfolioId">
+          <div class="mb-3"><label class="form-label">Client</label><select id="portfolioClient" class="form-select"></select></div>
+          <div class="mb-3"><label class="form-label">Description</label><textarea id="portfolioDesc" rows="3" class="form-control"></textarea></div>
+          <div class="mb-3"><label class="form-label">Image URL</label><input id="portfolioImage" class="form-control" placeholder="https://..."></div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-primary">Save</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS (CDN) and Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- App JS -->
+  <script src="app.js" type="module"></script>
+</body>
+</html>
