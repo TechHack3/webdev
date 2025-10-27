@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Bookmark Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo">🔖</div>
+        <div>
+          <h1>My Bookmarks</h1>
+          <p class="subtitle">Quick access to your favorite links</p>
+        </div>
+      </div>
+
+      <div class="tools">
+        <div class="search-wrap">
+          <input id="search" type="search" placeholder="Search title or url..." aria-label="Search bookmarks">
+        </div>
+
+        <select id="categoryFilter" aria-label="Filter by category">
+          <option value="">All categories</option>
+        </select>
+
+        <button id="addBtn" class="btn primary">+ Add</button>
+        <button id="exportBtn" class="btn">Export</button>
+        <input id="importFile" type="file" accept="application/json" class="hidden">
+        <button id="importBtn" class="btn">Import</button>
+      </div>
+    </header>
+
+    <section id="grid" class="grid" aria-live="polite"></section>
+
+    <footer class="footer">
+      <small>Saved locally in your browser • Drag to reorder • Click a card to open</small>
+    </footer>
+  </main>
+
+  <!-- Modal: Add / Edit -->
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-card">
+      <h2 id="modalTitle">Add Bookmark</h2>
+      <form id="bookmarkForm">
+        <label>
+          Title
+          <input id="title" name="title" required maxlength="80" placeholder="Example: MDN JavaScript">
+        </label>
+        <label>
+          URL
+          <input id="url" name="url" required placeholder="https://">
+        </label>
+        <label>
+          Category
+          <input id="category" name="category" placeholder="e.g. Dev, News, Tools">
+        </label>
+        <div class="form-actions">
+          <button type="submit" class="btn primary">Save</button>
+          <button type="button" id="cancelBtn" class="btn">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <template id="cardTemplate">
+    <article class="card" tabindex="0" draggable="true">
+      <div class="card-content">
+        <div class="fav-icon">🔗</div>
+        <div class="meta">
+          <div class="title"></div>
+          <div class="url"></div>
+        </div>
+      </div>
+      <div class="card-actions">
+        <button class="small-btn edit" title="Edit">✏️</button>
+        <button class="small-btn delete" title="Delete">🗑️</button>
+      </div>
+    </article>
+  </template>
+
+  <script src="script.js" type="module"></script>
+</body>
+</html>
