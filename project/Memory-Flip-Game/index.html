@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memory Flip Game — Emojis</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header>
+      <div class="title">
+        <div style="font-size:28px">🧠</div>
+        <div>
+          <h1>Memory Flip — Match the Pairs</h1>
+          <div class="legend">Flip cards and match pairs of emojis. Built with HTML · CSS · JS</div>
+        </div>
+      </div>
+
+      <div class="controls">
+        <div class="status">
+          <div class="chip">Moves: <span id="moves">0</span></div>
+          <div class="chip">Time: <span id="timer">00:00</span></div>
+          <div class="chip">Matches: <span id="matches">0</span>/<span id="total">8</span></div>
+        </div>
+        <button class="btn" id="restart">Restart</button>
+      </div>
+    </header>
+
+    <div class="board-wrap">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+        <div class="difficulty" title="Cards count">
+          <input type="radio" id="easy" name="size" value="6">
+          <label for="easy">Easy (6)</label>
+          <input type="radio" id="normal" name="size" value="8" checked>
+          <label for="normal">Normal (8)</label>
+          <input type="radio" id="hard" name="size" value="12">
+          <label for="hard">Hard (12)</label>
+        </div>
+        <div class="small">Tip: Tap/click a card to flip</div>
+      </div>
+
+      <div class="board" id="board"></div>
+    </div>
+
+    <footer>
+      <div class="small">Made with ❤️ — Open this file in your browser</div>
+      <div class="small">Want icons instead of emojis? Change them in script.js.</div>
+    </footer>
+  </div>
+
+  <div class="overlay hidden" id="overlay">
+    <div class="modal">
+      <h2>🎉 You won!</h2>
+      <p id="modal-text">Great job — all pairs matched.</p>
+      <div style="margin-top:12px;display:flex;gap:8px;justify-content:center">
+        <button class="btn" id="play-again">Play again</button>
+        <button class="btn" id="close-modal">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
