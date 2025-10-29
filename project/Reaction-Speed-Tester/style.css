@@ -1,0 +1,25 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #0d1117;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+  width: 300px;
+  height: 200px;
+  background: crimson;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+  text-align: center;
+}
+
+p { font-size: 1.2em; margin-top: 10px; }
