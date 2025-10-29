@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #0d1117;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  top: 40%;
+  transform: translateY(-40%);
+}
+
+h1 {
+  color: #00ff88;
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+p {
+  color: #ccc;
+  font-size: 1.1em;
+}
